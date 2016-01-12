@@ -50,5 +50,26 @@ function register_widgets(){
 		'after_title' => '</h3>',
 	) );
 
+	register_sidebar( array(
+		'name'          => __( 'Top Widget'),
+		'description'   => __( 'sidebar-top.php - Displays on the header' ),
+		'id'            => 'top-widget',
+		'before_widget' => '<div id="%1$s" class="%2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
+
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget'),
+		'description'   => __( 'sidebar-footer.php - Display on the footer' ),
+		'id'            => 'footer-widget',
+		'before_widget' => '<div id="%1$s" class="grid col-300 %2$s"><div class="widget-wrapper">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
+	) );
+
 }//end register_widgets()
 add_action( 'widgets_init', 'register_widgets' );

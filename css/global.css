@@ -5,7 +5,11 @@
 	Variables
 /* ========================================================================== */
 /* Directories */
-/* Colors */
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
 /* Font Sizes */
 article,
 aside,
@@ -64,7 +68,7 @@ dfn {
 
 mark {
   background: white;
-  color: #444444;
+  color: #5c6b80;
 }
 
 code,
@@ -172,7 +176,7 @@ img {
 
   pre,
   blockquote {
-    border: 1px solid #444444;
+    border: 1px solid #5c6b80;
     page-break-inside: avoid;
   }
 
@@ -206,14 +210,67 @@ img {
   }
 }
 /* ==========================================================================
+	Grids
+/* ========================================================================== */
+/*$susy: (
+	columns:12,
+	gutters:1,
+)*/
+/* ==========================================================================
 	Variables
 /* ========================================================================== */
 /* Directories */
-/* Colors */
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
 /* Font Sizes */
+/* ==========================================================================
+	Typography
+/* ========================================================================== */
+/*
+The following is based of Typebase:
+https://github.com/devinhunt/typebase.css
+I've edited it a bit, but it's a nice starting point.
+*/
+/*
+some nice typographical defaults
+more here: http://www.newnet-soft.com/blog/csstypography
+*/
+p {
+  -ms-word-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+  -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig";
+}
+
+.rtecenter {
+  text-align: center;
+}
+
+/* ==========================================================================
+	Mixins
+/* ========================================================================== */
+/*********************
+BASE (MOBILE) SIZE
+*********************/
 /* ==========================================================================
 	Base
 /* ========================================================================== */
+/* Portrait */
+/* Landscape */
+/* Portrait and Landscape */
 html {
   height: 100%;
   font-size: 100%;
@@ -227,15 +284,16 @@ input,
 select,
 textarea {
   font-family: Arial, sans-serif;
-  color: #444444;
+  color: #5c6b80;
 }
 
 body {
   height: 100%;
   margin: 0;
-  font-size: 1em;
-  line-height: 1.4;
-  background: #e1e1e1;
+  color: #5c6b80;
+  background-color: #f8f9fa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /*	Apply to all elements. In a responsive design, this is almost always a good idea */
@@ -245,31 +303,52 @@ body {
   box-sizing: border-box;
 }
 
-/* ==========================================================================
-	Links
-/* ========================================================================== */
-a {
-  color: #26527c;
-  text-decoration: underline;
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+.wrap {
+  width: 100%;
+  margin: 0 auto;
 }
 
-a:focus,
-a:hover {
-  color: #08111a;
+/*********************
+LINK STYLES
+*********************/
+a, a:visited {
+  color: #ef3829;
+  /* on hover */
+  /* on click */
+  /* mobile tap color */
 }
-
-a:focus {
-  outline: thin dotted;
+a:hover, a:focus, a:visited:hover, a:visited:focus {
+  color: #f69088;
 }
-
-a:active,
-a:hover {
-  outline: 0;
+a:link, a:visited:link {
+  /*
+  this highlights links on iPhones/iPads.
+  so it basically works like the :hover selector
+  for mobile devices.
+  */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
 	Typography
 /* ========================================================================== */
+/* H1, H2, H3, H4, H5 STYLES */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  text-rendering: optimizelegibility;
+  font-weight: 500;
+  /*
+  if you're going to use webfonts, be sure to check your weights
+  http://css-tricks.com/watch-your-font-weight/
+  */
+  /* removing text decoration from all headline links */
+}
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+  text-decoration: none;
+}
+
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1em;
@@ -277,15 +356,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.8em;
 }
 
 h3 {
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 
 h4 {
@@ -298,32 +377,25 @@ h5, h6 {
 }
 
 /* Content Block Elements */
-dl,
-menu,
-ol,
-ul,
-p,
-pre {
+dl, mmenu, ol, ul, p, pre {
   margin: 0 0 1em;
 }
 
 /* Paragraphs */
 /* Lists */
-menu,
-ol,
-ul {
+menu, ol, ul {
   padding: 0 0 0 2em;
 }
 
 /* Selection Colors */
 ::-moz-selection {
-  background: #444444;
+  background: #5c6b80;
   color: white;
   text-shadow: none;
 }
 
 ::selection {
-  background: #444444;
+  background: #5c6b80;
   color: white;
   text-shadow: none;
 }
@@ -428,7 +500,7 @@ input.button {
   text-decoration: none;
 }
 #page-header ul li:hover a {
-  color: #444444;
+  color: #5c6b80;
 }
 
 /* Content */
@@ -503,19 +575,139 @@ input.button {
   padding: 1em 0;
 }
 
-/* 320px to 479px */
-/* 480px to 639px */
-@media only screen and (min-width: 480px) {
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+/* for sites that are read right to left (i.e. hebrew) */
+/* home page */
+/* blog template page */
+/* archive page */
+/* date archive page */
+/* replace the number to the corresponding page number */
+/* search page */
+/* search result page */
+/* no results search page */
+/* individual paged search (i.e. body.search-paged-3) */
+/* 404 page */
+/* single post page */
+/* individual post page by id (i.e. body.postid-73) */
+/* individual paged single (i.e. body.single-paged-3) */
+/* attatchment page */
+/* individual attatchment page (i.e. body.attachmentid-763) */
+/* style mime type pages */
+/* author page */
+/* user nicename (i.e. body.author-samueladams) */
+/* paged author archives (i.e. body.author-paged-4) for page 4 */
+/* category page */
+/* individual category page (i.e. body.category-6) */
+/* replace the number to the corresponding page number */
+/* tag page */
+/* individual tag page (i.e. body.tag-news) */
+/* replace the number to the corresponding page number */
+/* custom page template page */
+/* individual page template (i.e. body.page-template-contact-php */
+/* replace the number to the corresponding page number */
+/* parent page template */
+/* child page template */
+/* replace the number to the corresponding page number */
+/* if user is logged in */
+/* paged items like search results or archives */
+/* individual paged (i.e. body.paged-3) */
+/*********************
+LARGER MOBILE DEVICES
+*********************/
+@media only screen and (min-width: 481px) {
+  /******************************************************************
+  
+  Stylesheet: 481px and Up Stylesheet
+  
+  ******************************************************************/
+  /* Portrait */
+  /* Landscape */
+  /* Portrait and Landscape */
+  /*********************
+  GENERAL STYLES
+  *********************/
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
+  /*********************
+  HEADER STYLES
+  *********************/
   #page-header ul {
     overflow: auto;
   }
   #page-header ul li {
     float: left;
   }
+
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  /*********************
+  FOOTER STYLES
+  *********************/
 }
-/* 640px to 767px */
-/* 768px to 1024px */
+@media only screen and (min-width: 481px) {
+  /******************************************************************
+  
+  Stylesheet: 481px and Up Stylesheet
+  
+  ******************************************************************/
+  /* Portrait */
+  /* Landscape */
+  /* Portrait and Landscape */
+  /*********************
+  GENERAL STYLES
+  *********************/
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
+  /*********************
+  HEADER STYLES
+  *********************/
+  #page-header ul {
+    overflow: auto;
+  }
+  #page-header ul li {
+    float: left;
+  }
+
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  /*********************
+  FOOTER STYLES
+  *********************/
+}
+/*********************
+TABLET & SMALLER LAPTOPS
+*********************/
 @media only screen and (min-width: 768px) {
+  /******************************************************************
+  
+  Stylesheet: Tablet & Small Desktop Stylesheet
+  
+  ******************************************************************/
+  /*********************
+  GENERAL STYLES
+  *********************/
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
   #page-header {
     padding: 1em 2em;
   }
@@ -534,15 +726,44 @@ input.button {
     width: 40%;
   }
 
+  /*********************
+  HEADER STYLES
+  *********************/
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
   .search-form .search {
     width: 70%;
   }
   .search-form .submit {
     width: 27%;
   }
+
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  /*********************
+  FOOTER STYLES
+  *********************/
 }
-/* 1024px to 1534px */
-@media only screen and (min-width: 1024px) {
+/*********************
+DESKTOP
+*********************/
+@media only screen and (min-width: 1030px) {
+  /******************************************************************
+  
+  Stylesheet: Desktop Stylsheet
+  
+  ******************************************************************/
+  /*********************
+  GENERAL STYLES
+  *********************/
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
   #page-wrap {
     width: 80%;
   }
@@ -559,15 +780,210 @@ input.button {
   #page-footer {
     width: 80%;
   }
+
+  /*********************
+  HEADER STYLES
+  *********************/
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  /*********************
+  FOOTER STYLES
+  *********************/
 }
-/* More than 1534px */
-/* High PX Density */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+/*********************
+LARGE VIEWING SIZE
+*********************/
+@media only screen and (min-width: 1240px) {
+  /******************************************************************
+  
+  Stylesheet: Super Large Monitor Stylesheet
+  
+  ******************************************************************/
+  /*********************
+  GENERAL STYLES
+  *********************/
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
+  /*********************
+  HEADER STYLES
+  *********************/
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  /*********************
+  FOOTER STYLES
+  *********************/
+}
+/*********************
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*********************/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /******************************************************************
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Retina Screens & Devices Stylesheet
+  
+  When handling retina screens you need to make adjustments, especially
+  if you're not using font icons. Here you can add them in one neat
+  place.
+  
+  ******************************************************************/
+  /* 
+  
+  EXAMPLE 
+  Let's say you have an image and you need to make sure it looks ok
+  on retina screens. Let's say we have an icon which dimension are
+  24px x 24px. In your regular stylesheets, it would look something
+  like this:
+  
+  .icon {
+  	width: 24px;
+  	height: 24px;
+  	background: url(img/test.png) no-repeat;
+  }
+  
+  For retina screens, we have to make some adjustments, so that image
+  doesn't look blurry. So, taking into account the image above and the
+  dimensions, this is what we would put in our retina stylesheet:
+  
+  .icon {
+  	background: url(img/test@2x.png) no-repeat;
+  	background-size: 24px 24px;
+  }
+  
+  So, you would create the same icon, but at double the resolution, meaning 
+  it would be 48px x 48px. You'd name it the same, but with a @2x at the end
+  (this is pretty standard practice). Set the background image so it matches
+  the original dimensions and you are good to go. 
+  
+  */
+  /*********************
+  GENERAL STYLES
+  *********************/
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
   #page-header {
     background: url("/content/themes/exactal/images/black_lozenge_@2X.png");
   }
 
+  /*********************
+  HEADER STYLES
+  *********************/
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
   .search-form {
     background: url("/content/themes/exactal/images/black_lozenge_@2X.png");
+  }
+
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  /*********************
+  FOOTER STYLES
+  *********************/
+}
+/*********************
+PRINT STYLESHEET
+Feel free to customize this. Remember to add things that won't make
+sense to print at the bottom. Things like nav, ads, and forms should
+be set to display none.
+*********************/
+@media print {
+  /******************************************************************
+  Site Name:
+  Author:
+  
+  Stylesheet: Print Stylesheet
+  
+  This is the print stylesheet. There's probably not a lot
+  of reasons to edit this stylesheet. If you want to
+  though, go for it.
+  
+  ******************************************************************/
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+  a:after, a:visited:after {
+    content: " (" attr(href) ")";
+  }
+  a abbr[title]:after, a:visited abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  .sidebar,
+  .page-navigation,
+  .wp-prev-next,
+  .respond-form,
+  nav {
+    display: none;
   }
 }

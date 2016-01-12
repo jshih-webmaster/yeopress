@@ -1,0 +1,64 @@
+/******************************************************************
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+	#page-header {
+		padding: $size_base  $size_base * 2;
+	}
+	#content-wrap {
+		overflow: auto;
+	}
+	#page-content {
+		float: left;
+		width: 55%;
+	}
+	#page-sidebar {
+		float: right;
+		width: 40%;
+	}
+
+/*********************
+HEADER STYLES
+*********************/
+
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+	.search-form {
+		.search {
+			width: 70%;
+		}
+		.submit {
+			width: 27%;
+		}
+	}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+
+
+/*********************
+FOOTER STYLES
+*********************/
+

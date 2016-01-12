@@ -25,6 +25,7 @@
 					</span>
 				<?php endif; ?>
 			</h1>
+			<?php get_sidebar( 'top' ); ?>
 			<?php wp_nav_menu(array(
 				'theme_location' => 'main-nav',
 				'container'      => 'nav',

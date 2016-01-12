@@ -1,0 +1,43 @@
+/* ==========================================================================
+	Variables
+/* ========================================================================== */
+/* Directories */
+$theme_dir: '/content/themes/exactal/';
+$images_dir: '/content/themes/exactal/images/';
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #323944;
+$white:             #fff;
+
+$gray:              #eaedf2;
+$light-gray:        #f8f9fa;
+$meta-gray:         #152025;
+
+$tan:               #eceee5;
+$green:             #7dd667;
+$blue:              #2980b9;
+$red: 				#f00;
+
+$ex-red:			#ef3829;
+$ex-gray:			#8d8f95;
+
+$text_color:        #5c6b80;
+$color_link:        $ex-red;
+$link_hover:        lighten($color_link, 20%);
+$disabled-gray:     #cfcfcf;
+$border-color:      #ccc;
+
+
+/* Font Sizes */
+$size_base: 1em;
+//$main-font-size:16px;

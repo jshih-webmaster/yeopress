@@ -77,7 +77,8 @@ module.exports = function(grunt) {
 					}
 				],
 				options : {
-					style : 'compressed'
+					style : 'compressed',
+					require: 'susy'
 				}
 			},
 			dev : {
@@ -91,7 +92,8 @@ module.exports = function(grunt) {
 					}
 				],
 				options : {
-					style : 'expanded'
+					style : 'expanded',
+					require: 'susy'
 				}
 			}
 		},
@@ -190,7 +192,7 @@ module.exports = function(grunt) {
 		    },
 		    heroku: {
 		      options: {
-		        remote: 'git@heroku.com:example-heroku-webapp-1988.git',
+		        remote: 'git@heroku.com:tranquil-citadel-6661.git',
 		        branch: 'master',
 		        tag: pkg.version
 		      }
